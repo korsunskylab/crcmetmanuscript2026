@@ -1,15 +1,60 @@
-Code by Hongcheng Yao, Alex Tang, Yiwen He, and Zhengyue Li.
+# CRC Manuscript Code Repository
 
-AT-041526-18-144-SuppFig1A-SuppFig2.ipynb: Code for producing Figure S1A and Figure S2.
+This working copy combines the original manuscript code with a framework for future processing and figure-generation workflows.
 
-AT-041426-18-144_Fig2E-F.ipynb: Code for producing Figure 2E and 2F.
+All 15 files tracked in the original repository at commit `08b22acb28622d4470b5567101c9f2f4d3187aa6` are preserved unchanged under [additional_analyses/](additional_analyses/). This includes all 13 notebooks, the ZL R script, and the [original README](additional_analyses/README.md).
 
-AT-041426-18-144_Fig3E_G-J_SuppFig3_D-F.ipynb: Code for producing Figure 3E, 3G, 3H, 3I, 3J, and Figure S3D, S3E, and S3F.
+Original code by Hongcheng Yao, Alex Tang, Yiwen He, and Zhengyue Li. The original figure descriptions and contributor information remain in the original README.
 
-AT-041426-18-144-Fig4A_E-F_SuppFig4E-G.ipynb: Code for producing Figure 4A, 4E, 4F, and Figure S4E, S4F, and S4G.
+The first plotting notebook, [plot/scrna_global_umap.ipynb](plot/scrna_global_umap.ipynb), is an unchanged copy of [HY_fig1c_globalUmap.ipynb](additional_analyses/HY_fig1c_globalUmap.ipynb) with a filename based on its analysis topic. Its source cells, saved outputs, and metadata are preserved; processing steps have not yet been separated from plotting, and execution from the new location has not been validated.
 
-AT-041526-18-144-Fig4G-K_SuppFig5.ipynb: Code for producing Figure 4G, 4H, 4I, 4J, 4K, and Figure S5.
+The `process/`, `R/`, `envs/`, and `config/` locations remain scaffolding only. No analysis code has been extracted from the original notebooks, no datasets have been added, and no analysis has been executed as part of this reorganization.
 
-YH-2025-Treg-analysis_SuppFig6A-D.ipynb: Code for producing Figure S6A, S6B, S6C, S6D.
+## Directory layout
 
-ZL-2025-Treg-analysis_SuppFig6E-N.R: Code for producing Figure S6E through S6N.
+```text
+crcmetmanuscript2026/
+|-- README.md
+|-- LICENSE                         # Empty placeholder
+|-- CITATION.cff                    # Empty placeholder
+|-- .gitignore
+|-- additional_analyses/
+|   |-- README.md                   # Original GitHub README, unchanged
+|   |-- HY_*.ipynb                  # All seven original HY notebooks
+|   |-- AT-*.ipynb                  # All five original AT notebooks
+|   |-- YH-*.ipynb                  # Original YH notebook
+|   `-- ZL-*.R                     # Original ZL script
+|-- envs/                           # Reproducible environment specifications
+|-- config/                         # Data paths and analysis configuration
+|-- process/
+|   |-- README.md
+|   |-- scrna/                      # Single-cell RNA analysis
+|   |-- tcr/                        # T-cell receptor analysis
+|   `-- xenium/                     # Spatial transcriptomics analysis
+|-- plot/
+|   |-- README.md                   # Plotting notebook guidance and status
+|   `-- scrna_global_umap.ipynb     # Unchanged copy; execution not yet validated
+|-- R/                             # Shared R functions
+|-- data/
+|   `-- README.md                   # Data access and provenance guidance
+|-- docs/
+|   |-- architecture_guide.md       # Organizational recommendations
+|   |-- additional_analyses_guide.md
+|   |-- migration_notes.md         # Checks and remaining path dependencies
+|   |-- migration_manifest.tsv     # Original paths, new paths, and checksums
+|   |-- migration_provenance.json  # Source commit and migration metadata
+|   `-- figure_map.tsv             # Header only; dependencies not yet mapped
+`-- results/                       # Generated tables and figures
+```
+
+Empty directories contain `.gitkeep` files so that Git can retain their structure. These files have no computational role. Git metadata remains in `.git/` at the repository root.
+
+## Start here
+
+Read [the migration notes](docs/migration_notes.md) for the completed checks and outstanding execution dependencies, and [the architecture guide](docs/architecture_guide.md) before adding new workflows. Establish the relationship between each figure input and its actual producing script, then record it in [the figure map](docs/figure_map.tsv).
+
+Use `process/` for upstream computation, `plot/` for figure-oriented entry points, and `R/` for shared functions. Keep all documentation, comments, and explanatory notebook text in English.
+
+The [preservation guide](docs/additional_analyses_guide.md) explains the role of `additional_analyses/`. The directory contains the entire original repository snapshot, including the HY notebooks. Keep this preserved baseline identifiable as new workflows are developed.
+
+`LICENSE` and `CITATION.cff` are intentionally empty. They do not yet specify a license or valid citation metadata and must be completed before a public release. The empty `envs/` and `config/` directories likewise do not define a runnable environment.

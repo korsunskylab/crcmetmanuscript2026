@@ -1,0 +1,17 @@
+{
+  "prepared_at_utc": "2026-11-11T21:24:25.391696+00:00",
+  "repository_url": "https://github.com/korsunskylab/crcmetmanuscript2026.git",
+  "source_branch": "main",
+  "source_commit": "08b22acb28622d4470b5567101c9f2f4d3187aa6",
+  "local_branch": "local/restructure-code",
+  "history_commits_at_clone": 14,
+  "is_shallow_repository": false,
+  "original_tracked_files": 15,
+  "original_notebooks": 13,
+  "preserved_directory": "additional_analyses/",
+  "scaffold_source": "../ccr_ver/",
+  "migration_manifest": "docs/migration_manifest.tsv",
+  "analysis_files_modified": false,
+  "notebooks_executed": false,
+  "remote_writes_performed": false
+}

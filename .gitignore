@@ -1,0 +1,33 @@
+# Jupyter checkpoints
+**/.ipynb_checkpoints/
+
+# Generated results; retain the directory placeholder
+/results/*
+!/results/.gitkeep
+
+# Downloaded data and intermediate objects; retain data documentation
+/data/*
+!/data/README.md
+
+# Machine-specific configuration and local credentials
+/config/local.*
+/config/*.local.*
+.env
+.env.*
+!.env.example
+
+# Local R session files
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# Local Python environments and caches
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
