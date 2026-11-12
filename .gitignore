@@ -5,9 +5,8 @@
 /results/*
 !/results/.gitkeep
 
-# Downloaded data and intermediate objects; retain data documentation
-/data/*
-!/data/README.md
+# Local data snapshots; documentation and manifests are kept under docs/
+/data/
 
 # Machine-specific configuration and local credentials
 /config/local.*
